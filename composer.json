@@ -1,0 +1,8 @@
+{
+    "name": "pedro/juizo-final",
+    "autoload": {
+        "psr-4": {
+            "core\\":"core/"
+        }
+    }
+}
