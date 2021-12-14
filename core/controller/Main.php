@@ -3,6 +3,7 @@
 namespace core\controller;
 
 use core\Classes\carregador;
+use core\Models\Users;
 
 class Main{
 
@@ -18,15 +19,13 @@ class Main{
         ]);
     }
 
+    public function cadastro_user(){
+        $ql = new Users();
+        $ql->registrar_cliente();
+    }
     public function lista(){
         carregador::layout([
             'lista',
-        ]);
-    }
-
-    public function cadastro_sucesso(){
-        carregador::layout([
-            'cadastro_sucesso',
         ]);
     }
 }

@@ -4,7 +4,7 @@ namespace core\Classes;
 
 use Exception;
 
-class carregador
+class Carregador
 {
     //===================================================
     public static function layout($estrutura, $dados = null)
@@ -24,5 +24,18 @@ class carregador
         foreach ($estrutura as $sla) {
             include("core/Views/$sla.php");
         }
+    }
+
+    public static function clientelog()
+    {
+        //Verifica se existe um cliente com sessão iniciada
+        return isset($_SESSION['cliente']);
+    }
+
+    public static function criarhash($num_caracter = 12)
+    {
+        //criar hash
+        $chars = '01234567890123456789abcdefghijklmnopqrstuvxwyzabcdefghijklmnopqrstuvxwyzABCDEFGHIJKLMNOPQRSTUVXWYZABCDEFGHIJKLMNOPQRSTUVXWYZ';
+        return substr(str_shuffle($chars), 0, $num_caracter);
     }
 }

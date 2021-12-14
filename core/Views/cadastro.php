@@ -4,10 +4,10 @@
             <h3 class="text-center">Cadastro</h3>
 
             <!-- Formulário para a criação de um novo utilizador -->
-            <form action="/cadastro_sucesso" method="post" id="form">
+            <form action="/cadastro_user" method="post" id="form">
                 <div>
 
-                <!-- Código php que apresenta o erro para as senhas difeerentes -->
+                <!-- Código php que apresenta o erro para as senhas diferentes -->
 
                 <?php if (isset($_SESSION['erro'])) : ?>
                     <div class="alert alert-danger text-center p-2">
@@ -50,13 +50,6 @@
                 <div class="my-3">
                     <label for="">Nome Completo</label>
                     <input type="text" name="nome_completo" placeholder="Nome Completo" class="form-control" required>
-                </div>
-
-
-                <!-- Morada -->
-                <div class="my-3">
-                    <label for="">Morada</label>
-                    <input type="text" name="text_morada" placeholder="Morada" class="form-control" required>
                 </div>
 
                 <!-- Cidade -->

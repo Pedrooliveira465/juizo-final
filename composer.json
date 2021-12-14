@@ -2,7 +2,16 @@
     "name": "pedro/juizo-final",
     "autoload": {
         "psr-4": {
-            "core\\":"core/"
+            "Pedro\\juizo-final":"src/"
+        },
+        "require":{},
+        "autoload-dev": {
+            "psr-4": {
+                "core\\": "core/"
+            },
+            "files" : [
+                "Config.php"
+            ]
         }
     }
 }

@@ -16,14 +16,20 @@ $router['cadastro'] = [
     'action' => 'cadastro'
 ];
 
+$router['cadastro_user'] = [
+    'rota' => '/cadastro_user',
+    'controller' => 'Main',
+    'action' => 'cadastro_user'
+];
+
 $router['lista'] = [
     'rota' => '/lista',
     'controller' => 'Main',
     'action' => 'lista'
 ];
 
-$router['cadastro_sucesso'] = [
-    'rota' => '/cadastro_sucesso',
+$router['Conexao'] = [
+    'rota' => '/Conexao',
     'controller' => 'Main',
     'action' => 'cadastro_sucesso'
 ];
