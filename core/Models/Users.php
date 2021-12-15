@@ -21,9 +21,11 @@ class Users
             $params = [
                 ':nome' => (trim($_POST['nome'])),
                 ':email' => strtolower(trim($_POST['text_email'])),
-                ':senha' => password_hash(trim($_POST['text_senha_1']), PASSWORD_DEFAULT),
+                ':senha' => (trim($_POST['text_senha_1'])),
                 ':cidade' => (trim($_POST['text_cidade'])),
                 ':telefone' => (trim($_POST['text_telefone']))
+
+                //criptografia de senha: password_hash, PASSWORD_DEFAULT
 
             ];
            /* echo "<pre>";
@@ -59,11 +61,11 @@ class Users
         $resultado = $bd->select("SELECT * FROM cliente WHERE email = :email AND senha = :senha", $parametros);
 
         if (count($resultado) != 1) {
-            echo "caneco";
+            echo "Não está cadastrado";
             return false;
             
         } else {
-            echo "deu bom";
+            echo "Bem-vindo";
             die();
 
             //Verificar a senha do usuário

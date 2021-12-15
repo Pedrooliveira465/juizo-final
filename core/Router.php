@@ -34,6 +34,12 @@ $router['lista'] = [
     'action' => 'lista'
 ];
 
+$router['Listagem'] = [
+    'rota' => '/Listagem',
+    'controller' => 'Main',
+    'action' => 'Listagem'
+];
+
 /*$router['Conexao'] = [
     'rota' => '/Conexao',
     'controller' => 'Main',
