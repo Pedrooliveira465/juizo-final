@@ -4,7 +4,7 @@
             <h3 class="text-center">Cadastro</h3>
 
             <!-- Formulário para a criação de um novo utilizador -->
-            <form action="/cadastro_cliente" method="post" id="form">
+            <form action="/Cadastro_Sucesso" method="post" id="form">
                 <div>
                     
                 <!-- Email -->

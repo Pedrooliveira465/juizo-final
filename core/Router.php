@@ -16,6 +16,12 @@ $router['cadastro'] = [
     'action' => 'cadastro'
 ];
 
+$router['Cadastro_Sucesso'] = [
+    'rota'=> '/Cadastro_Sucesso',
+    'controller' => 'Main',
+    'action' => 'cadastro_cliente'
+];
+
 $router['cadastro_cliente'] = [
     'rota' => '/cadastro_cliente',
     'controller' => 'Main',

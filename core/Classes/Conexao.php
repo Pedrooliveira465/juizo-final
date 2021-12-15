@@ -21,9 +21,6 @@ class Conexao{
            "",
             array(PDO::ATTR_PERSISTENT => true)
         );
-        //'charset=' . MYSQL_CHARSET;
-        //Atributo que mantém a ligação do servidor com a base de dados
-        // 
 
         //Debug
         $this->ligacao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
@@ -42,7 +39,6 @@ class Conexao{
         //Verifica se a expressão é um select
         if (!preg_match("/^SELECT/i", $sql)) {
             throw new Exception("Base de dados - Não é uma instrução em select", 1);
-            //die("Base de dados - Não é uma instrução em select");
         }
 
         //Liga
@@ -79,7 +75,6 @@ class Conexao{
      {
          if (!preg_match("/^INSERT/i", $sql)) {
              throw new Exception("Base de dados - Não é uma instrução em insert", 1);
-             //die("Base de dados - Não é uma instrução em select");
          }
  
          //Liga

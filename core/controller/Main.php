@@ -9,12 +9,6 @@ use core\Models\Users;
 class Main{
 
     public function login(){
-       //Verifica se já existe uma sessão iniciada
-       if (Carregador::clientelog()) {
-        $this->login();
-        return;
-    }
-
     Carregador::layout([
             //Header que contém a navegação do header
         'login',
@@ -22,21 +16,24 @@ class Main{
 
     }
     public function cadastro(){
-        if(Carregador::layout([
+        Carregador::layout([
             'cadastro',
-        ]));
+        ]);
     }
 
     public function cadastro_cliente(){
-        
+        Carregador::layout([
+            'Cadastro_Sucesso',
+        ]);
            $sla = new Users();
            $sla -> registrar_cliente();
     }
 
-    /*public function cadastro_user(){
-        $ql = new Users();
-        $ql->registrar_cliente();
+    /*public function login_cliente(){
+        $sla = new Users();
+        $sla -> login_cliente();
     }*/
+
     public function lista(){
         carregador::layout([
             'lista',
