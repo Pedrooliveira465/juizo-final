@@ -10,7 +10,6 @@ class Main{
 
     public function login(){
     Carregador::layout([
-            //Header que contém a navegação do header
         'login',
     ]);
 
@@ -29,14 +28,11 @@ class Main{
            $sla -> registrar_cliente();
     }
 
-    /*public function login_cliente(){
-        $sla = new Users();
-        $sla -> login_cliente();
-    }*/
-
     public function lista(){
-        carregador::layout([
-            'lista',
-        ]);
+        $email = ($_POST['email']);
+        $senha = ($_POST['senha']);
+
+        $sla = new Users();
+        $sla -> verificar_lista($email, $senha);
     }
 }

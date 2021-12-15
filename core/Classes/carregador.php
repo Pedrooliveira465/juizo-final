@@ -32,7 +32,7 @@ class Carregador
         return isset($_SESSION['cliente']);
     }
 
-    public static function criarhash($num_caracter = 12)
+    /*public static function criarhash($num_caracter = 12)
     {
         //criar hash
         $chars = '01234567890123456789abcdefghijklmnopqrstuvxwyzabcdefghijklmnopqrstuvxwyzABCDEFGHIJKLMNOPQRSTUVXWYZABCDEFGHIJKLMNOPQRSTUVXWYZ';
@@ -42,6 +42,6 @@ class Carregador
     public static function redirect($rota = ''){
 
         //faz o redirecionamento para a URL desejada (rota)
-        header("Location: " . BASE_URL . "/$rota");
-    }
+        //header("Location: " . 'http://localhost:8000' . "/$rota");
+    }*/
 }

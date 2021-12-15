@@ -8,12 +8,12 @@
                     <div class="form">
                         <div clas="my-3">
                             <label> Email</label>
-                            <input type="email" name="text_usuario" placeholder="Usuário" required class="form-control"><br>
+                            <input type="email" name="email" placeholder="Email" required class="form-control"><br>
                         </div>
 
                         <div class="my-3">
                             <label>Senha</label>
-                            <input type="password" name="text_password" placeholder="Senha " required class="form-control"><br>
+                            <input type="password" name="senha" placeholder="Senha " required class="form-control"><br>
                         </div>
 
                         <div>

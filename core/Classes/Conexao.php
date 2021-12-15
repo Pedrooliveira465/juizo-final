@@ -60,6 +60,7 @@ class Conexao{
             }
         } catch (PDOException $e) {
             //Caso exista erros
+            echo "erro banco";
             return false;
         }
 

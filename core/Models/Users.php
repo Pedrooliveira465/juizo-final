@@ -6,6 +6,8 @@ use core\Classes\Conexao;
 use core\Classes\Carregador;
 use Exception;
 
+session_start();
+
 class Users
 {
 
@@ -44,34 +46,41 @@ class Users
         }
     }
 
-    public function validar_login($usuario, $senha)
+    public function verificar_lista($email, $senha)
     {
 
         //Verificar se o login é válido 
         $parametros = [
-            ':usuario' => $usuario
+            ':email' => $email,
+            ':senha' => $senha
         ];
+        
         $bd = new Conexao();
-        $resultado = $bd->select("SELECT * FROM cliente WHERE email = :usuario", $parametros);
+        $resultado = $bd->select("SELECT * FROM cliente WHERE email = :email AND senha = :senha", $parametros);
 
         if (count($resultado) != 1) {
+            echo "caneco";
             return false;
+            
         } else {
-            //Verificar a senha do usuário
-            $usuario = $resultado[0];
+            echo "deu bom";
+            die();
 
-            if (!password_verify($senha, $usuario->$senha)) {
+            //Verificar a senha do usuário
+            //$usuario = $resultado[0];
+
+            /*if (!password_verify($senha, $usuario->$senha)) {
                 //Senha inválida
                 return false;
             } else {
                 //login válido. Coloca os dados na sessão
                 $_SESSION['cliente'] = $resultado->id_cliente;
-                $_SESSION['usuario'] = $resultado->email;
+                $_SESSION['email'] = $resultado->email;
                 $_SESSION['nome'] = $resultado->nome;
 
                 //redirecionar para o inicio da loja
                 Carregador::redirect();
-            }
+            }*/
         }
     }
 }
