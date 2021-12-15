@@ -11,14 +11,14 @@ class Conexao{
     
     private function ligar()
     {
-    
+
         //Ligação com a base de dados
         $this->ligacao = new PDO(
                 'mysql:' .
-                'host=' . MYSQL_SERVER . ';' .
-                'dbname=' . MYSQL_DATABASE . ';',
-            MYSQL_USER,
-            MYSQL_PASS,
+                'host=' . "localhost" . ';' .
+                'dbname=' . "fim" . ';',
+            "root",
+           "",
             array(PDO::ATTR_PERSISTENT => true)
         );
         //'charset=' . MYSQL_CHARSET;

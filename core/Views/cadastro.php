@@ -4,29 +4,9 @@
             <h3 class="text-center">Cadastro</h3>
 
             <!-- Formulário para a criação de um novo utilizador -->
-            <form action="/cadastro_user" method="post" id="form">
+            <form action="/cadastro_cliente" method="post" id="form">
                 <div>
-
-                <!-- Código php que apresenta o erro para as senhas diferentes -->
-
-                <?php if (isset($_SESSION['erro'])) : ?>
-                    <div class="alert alert-danger text-center p-2">
-                        <?= $_SESSION['erro'] ?>
-                        <!-- Bloco de php que retira o erro dda tela após um refresh -->
-                        <?php unset($_SESSION['erro']) ?>
-                    </div>
-                <?php endif;  ?>
-
-
-                <!-- ===================================================================================== -->
-                <?php if (isset($_SESSION['error'])) : ?>
-                    <div class="alert alert-danger text-center p-2">
-                        <?= $_SESSION['error'] ?>
-                        <!-- Bloco de php que retira o erro dda tela após um refresh -->
-                        <?php unset($_SESSION['error']) ?>
-                    </div>
-                <?php endif;  ?>
-
+                    
                 <!-- Email -->
                 <div class="my-3">
                     <label for="">Email</label>
@@ -48,8 +28,8 @@
 
                 <!-- nome_completo -->
                 <div class="my-3">
-                    <label for="">Nome Completo</label>
-                    <input type="text" name="nome_completo" placeholder="Nome Completo" class="form-control" required>
+                    <label for="">Nome</label>
+                    <input type="text" name="nome" placeholder="Nome" class="form-control" required>
                 </div>
 
                 <!-- Cidade -->

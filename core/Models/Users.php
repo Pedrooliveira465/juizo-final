@@ -8,6 +8,7 @@ use Exception;
 
 class Users
 {
+
     public function registrar_cliente()
     {
         try {
@@ -17,9 +18,9 @@ class Users
             //cria uma hash pro registro do cliente
             //parametros
             $params = [
+                ':nome' => (trim($_POST['nome'])),
                 ':email' => strtolower(trim($_POST['text_email'])),
                 ':senha' => password_hash(trim($_POST['text_senha_1']), PASSWORD_DEFAULT),
-                ':nome_completo' => (trim($_POST['nome_completo'])),
                 ':cidade' => (trim($_POST['text_cidade'])),
                 ':telefone' => (trim($_POST['text_telefone']))
 
@@ -28,21 +29,18 @@ class Users
             print_r($params);
             echo "</pre>";  
 
-            /*$bd->insert("INSERT INTO cliente VALUES (0, 
+            $bd->insert("INSERT INTO cliente VALUES (0, 
+            :nome,
             :email,
             :senha,
-            :nome_completo,
-            :morada,
             :cidade,
-            :telefone,
-            NOW(),
-            NOW(),
-            NULL
+            :telefone
             )
             ", $params);
+            die("DEU BOM PORRAAAA");
 
             //retorna o purl criado
-            return true;*/
+            return true;
         } catch (Exception $e) {
             return false;
         }

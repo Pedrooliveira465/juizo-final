@@ -16,10 +16,10 @@ $router['cadastro'] = [
     'action' => 'cadastro'
 ];
 
-$router['cadastro_user'] = [
-    'rota' => '/cadastro_user',
+$router['cadastro_cliente'] = [
+    'rota' => '/cadastro_cliente',
     'controller' => 'Main',
-    'action' => 'cadastro_user'
+    'action' => 'cadastro_cliente'
 ];
 
 $router['lista'] = [
@@ -28,11 +28,11 @@ $router['lista'] = [
     'action' => 'lista'
 ];
 
-$router['Conexao'] = [
+/*$router['Conexao'] = [
     'rota' => '/Conexao',
     'controller' => 'Main',
     'action' => 'cadastro_sucesso'
-];
+];*/
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 foreach ($router as $rota) :

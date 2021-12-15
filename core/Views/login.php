@@ -4,7 +4,6 @@
             <div>
                 <h3 class="text-center">login</h3>
 
-
                 <form action="/lista" method="POST" id="form">
                     <div class="form">
                         <div clas="my-3">
@@ -27,13 +26,6 @@
 
                     </div>
                 </form>
-
-                <?php if (isset($_SESSION['erro'])) : ?>
-                    <div class="alert alert-danger text-center">
-                        <?= $_SESSION['erro'] ?>
-                    </div>
-
-                <?php endif; ?>
 
             </div>
 
