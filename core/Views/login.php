@@ -4,6 +4,7 @@
             <div>
                 <h3 class="text-center">login</h3>
 
+                <!-- Formulário do login -->
                 <form action="/lista" method="POST" id="form">
                     <div class="form">
                         <div clas="my-3">

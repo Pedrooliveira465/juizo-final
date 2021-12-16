@@ -28,9 +28,6 @@ class Users
                 //criptografia de senha: password_hash, PASSWORD_DEFAULT
 
             ];
-           /* echo "<pre>";
-            print_r($params);
-            echo "</pre>";  */
 
             $bd->insert("INSERT INTO cliente VALUES (0, 
             :nome,
@@ -40,7 +37,6 @@ class Users
             :telefone
             )
             ", $params);
-            //die("DEU BOM PORRAAAA");
 
             return true;
         } catch (Exception $e) {
@@ -51,7 +47,7 @@ class Users
     public function verificar_lista($email, $senha)
     {
 
-        //Verificar se o login é válido 
+        //Verifica se o login é válido 
         $parametros = [
             ':email' => $email,
             ':senha' => $senha
@@ -66,22 +62,7 @@ class Users
             
         } else {
             return true;
-
-            //Verificar a senha do usuário
-            //$usuario = $resultado[0];
-
-            /*if (!password_verify($senha, $usuario->$senha)) {
-                //Senha inválida
-                return false;
-            } else {
-                //login válido. Coloca os dados na sessão
-                $_SESSION['cliente'] = $resultado->id_cliente;
-                $_SESSION['email'] = $resultado->email;
-                $_SESSION['nome'] = $resultado->nome;
-
-                //redirecionar para o inicio da loja
-                Carregador::redirect();
-            }*/
+            
         }
     }
 }

@@ -3,7 +3,7 @@
         <div class="col-sm-6 offset-sm-3 my-5 ">
             <h3 class="text-center">Cadastro</h3>
 
-            <!-- Formulário para a criação de um novo utilizador -->
+            <!-- Formulário do cadastro-->
             <form action="/Cadastro_Sucesso" method="post" id="form">
                 <div>
                     

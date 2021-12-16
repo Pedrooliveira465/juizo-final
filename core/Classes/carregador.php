@@ -20,7 +20,7 @@ class Carregador
             extract($dados);
         }
 
-        //Apresnetar as views da aplicação
+        //Apresenta as views da aplicação
         foreach ($estrutura as $sla) {
             include("core/Views/$sla.php");
         }
@@ -32,16 +32,4 @@ class Carregador
         return isset($_SESSION['cliente']);
     }
 
-    /*public static function criarhash($num_caracter = 12)
-    {
-        //criar hash
-        $chars = '01234567890123456789abcdefghijklmnopqrstuvxwyzabcdefghijklmnopqrstuvxwyzABCDEFGHIJKLMNOPQRSTUVXWYZABCDEFGHIJKLMNOPQRSTUVXWYZ';
-        return substr(str_shuffle($chars), 0, $num_caracter);
-    }
-
-    public static function redirect($rota = ''){
-
-        //faz o redirecionamento para a URL desejada (rota)
-        //header("Location: " . 'http://localhost:8000' . "/$rota");
-    }*/
 }

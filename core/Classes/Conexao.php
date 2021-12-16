@@ -27,7 +27,7 @@ class Conexao{
     }
     private function desligar()
     {
-        //Encerra a conexão com a base de dados 
+        //Encerra a conexão com o banco de dados 
         $this->ligacao = null;
     }
 

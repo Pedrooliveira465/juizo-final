@@ -14,7 +14,6 @@
 </html>
 
 <?php
-//require_once("Conexao.php");
 use core\Classes\Conexao;
 use core\Models\Users;
 use core\controller\Main;
