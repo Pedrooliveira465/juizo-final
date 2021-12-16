@@ -14,6 +14,13 @@ class Main{
     ]);
 
     }
+
+    public function erro_login(){
+        Carregador::layout([
+            'Erro_login',
+        ]);
+    }
+
     public function cadastro(){
         Carregador::layout([
             'cadastro',
@@ -38,6 +45,33 @@ class Main{
 
         $sla = new Users();
         $sla -> verificar_lista($email, $senha);
+    }
+
+    public function editar(){
+        Carregador::layout([
+            'Editar',
+        ]);
+
+    }
+
+    public function Editar2(){
+        $nome = ($_POST['nome']);
+        $cidade = ($_POST['cidade']);
+
+        $edit = new Users();
+        $edit -> editar($nome, $cidade);
+    }
+
+    public function delete(){
+        Carregador::layout([
+            'Delete',
+        ]);
+    }
+
+    public function detalhes(){
+        Carregador::layout([
+            'Detalhes',
+        ]);
     }
     
 }

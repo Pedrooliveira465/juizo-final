@@ -4,6 +4,7 @@ namespace core\Models;
 
 use core\Classes\Conexao;
 use core\Classes\Carregador;
+use core\controller\Main;
 use Exception;
 
 session_start();
@@ -20,23 +21,29 @@ class Users
             //parametros
             $params = [
                 ':nome' => (trim($_POST['nome'])),
-                ':email' => strtolower(trim($_POST['text_email'])),
-                ':senha' => (trim($_POST['text_senha_1'])),
-                ':cidade' => (trim($_POST['text_cidade'])),
-                ':telefone' => (trim($_POST['text_telefone']))
-
+                ':cidade' => (trim($_POST['text_cidade']))
+                
                 //criptografia de senha: password_hash, PASSWORD_DEFAULT
-
             ];
 
             $bd->insert("INSERT INTO cliente VALUES (0, 
             :nome,
-            :email,
-            :senha,
-            :cidade,
-            :telefone
+            :cidade
             )
             ", $params);
+
+            $paramss = [
+                ':email' => strtolower(trim($_POST['text_email'])),
+                ':senha' => password_hash(trim($_POST['text_senha_1']), PASSWORD_DEFAULT),
+                ':telefone' => (trim($_POST['text_telefone']))
+            ];
+
+            $bd->insert("INSERT INTO dados_sensiveis VALUES (0,
+            :email,
+            :senha,
+            :telefone
+            )
+            ", $paramss);
 
             return true;
         } catch (Exception $e) {
@@ -44,46 +51,41 @@ class Users
         }
     }
 
-/*public function listagem($nome, $cidade){
-    $parametros = [
-        ':nome' => $nome,
-        ':cidade' => $cidade
-    ];
-
-    $bd = new Conexao();
-    $resultado = $bd->select("SELECT * FROM cliente WHERE nome = :nome AND cidade = :cidade", $parametros);
-
-    if (count($resultado) != 1) {
-        echo "Não está cadastrado listagem";
-        return false;
-        
-    } else {
-        echo "sla listagem";
-        return true;
-
-    }
-
-}*/
-
     public function verificar_lista($email, $senha)
     {
 
         //Verifica se o login é válido 
-        $parametros = [
+        $paramss = [
             ':email' => $email,
             ':senha' => $senha
         ];
         
         $bd = new Conexao();
-        $resultado = $bd->select("SELECT * FROM cliente WHERE email = :email AND senha = :senha", $parametros);
+        $login = new Main();
+        $resultado = $bd->select("SELECT * FROM dados_sensiveis WHERE email = :email AND senha = :senha", $paramss);
 
         if (count($resultado) != 1) {
-            echo "Não está cadastrado";
-            return false;
+            //echo "n deu certo";
+            //return $login -> erro_login();
             
         } else {
             return true;
 
         }
     }
+
+    public function editar($nome, $cidade){
+        $parm = [
+            ':nome' => $nome,
+            ':cidade' => $cidade
+        ];
+
+        echo "<pre>";
+        print_r($parm);
+        echo "</pre>";
+        $bd = new Conexao();
+        $bd->Update("UPDATE cliente SET nome = :nome , cidade = :cidade, $parm");  
+
+    }
+
 }

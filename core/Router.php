@@ -40,6 +40,30 @@ $router['Listagem'] = [
     'action' => 'Listagem'
 ];
 
+$router['Editar'] = [
+    'rota' => '/Editar',
+    'controller' => 'Main',
+    'action' => 'Editar'
+];
+
+$router['Delete'] = [
+    'rota' => '/Delete',
+    'controller' => 'Main',
+    'action' => 'Delete'
+];
+
+$router['Detalhes'] = [
+    'rota' => '/Detalhes',
+    'controller' => 'Main',
+    'action' => 'Detalhes'
+];
+
+$router['Editar2'] = [
+    'rota'=> '/Editar2',
+    'controller' => 'Main',
+    'action' => 'Editar2'
+];
+
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 foreach ($router as $rota) :
     if ($url === $rota['rota']) :
@@ -52,7 +76,7 @@ foreach ($router as $rota) :
             hash_hmac('sha256', $header.'.'.$payload, 'segredo', true)
         );
 
-        echo $header.'.'.$payload.'.'.$signature;
+        //echo $header.'.'.$payload.'.'.$signature;
 
         $ctr = new $carregador();
         $ctr->$metodo();

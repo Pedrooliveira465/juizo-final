@@ -29,19 +29,16 @@ use core\controller\Main;
    try {
     //$teste = array_keys($consulta);
        $linha = $conexao -> select("SELECT * FROM cliente");
-           echo "<div><table border='1'><tr><td>Email</td><td>Senha</td></tr>";
-
-           $email = ($_POST['email']);
-           $senha = ($_POST['senha']);
-
+           echo "<div><table border='1'><tr><td>Nome</td><td>Cidade</td></tr>";
+          
             foreach ($linha as $key => $value) {
-                echo "<tr><td>$email</td><td>$senha</td>";
+                echo "<tr><td>". $linha[$key]->nome ."</td>
+                <td>". $linha[$key]->cidade."</td>
+                <td><a href='/Editar'>Editar</td></a>
+                <td><a href='/Delete'>Deletar</td></a> 
+                <td><a href='/Detalhes'>Detalhes</td></a>
+                </tr>";
             }
-
-               /*while ($linha = $consulta ->fetch(PDO::FETCH_ASSOC)) {
-                   echo "<tr><td>$linha[email]</td><td>$linha[senha]</td>";
-                    
-               }*/
 
                echo "</table>";
     }catch (PDOException $erro) {
