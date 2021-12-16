@@ -1,7 +1,8 @@
 {
     "name": "pedro/juizo-final",
     "require":{
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "firebase/php-jwt": "^5.5"
     },
     "autoload": {
         "psr-4": {

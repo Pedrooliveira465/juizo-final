@@ -29,6 +29,10 @@ class Main{
     }
 
     public function lista(){
+        Carregador::layout([
+            'Listagem',
+        ]);
+        
         $email = ($_POST['email']);
         $senha = ($_POST['senha']);
 

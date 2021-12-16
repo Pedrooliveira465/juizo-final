@@ -52,6 +52,14 @@ foreach ($router as $rota) :
         $carregador = 'core\\controller\\' . ucfirst($rota['controller']);
         $metodo = $rota['action'];
 
+        $header = base64_encode('{"alg": "HS256", "typ": "JWT"}'); 
+        $payload = base64_encode('{"sub": "'.md5(time()).'", "name": "Pedro Oliveira", "iat": '.time().'}');
+        $signature = base64_encode(
+            hash_hmac('sha256', $header.'.'.$payload, 'segredo', true)
+        );
+
+        echo $header.'.'.$payload.'.'.$signature;
+
         $ctr = new $carregador();
         $ctr->$metodo();
         return;

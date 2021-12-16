@@ -65,8 +65,7 @@ class Users
             return false;
             
         } else {
-            echo "Bem-vindo";
-            die();
+            return true;
 
             //Verificar a senha do usuário
             //$usuario = $resultado[0];

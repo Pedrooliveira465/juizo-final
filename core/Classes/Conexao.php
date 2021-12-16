@@ -38,7 +38,8 @@ class Conexao{
         $sql = trim($sql);
         //Verifica se a expressão é um select
         if (!preg_match("/^SELECT/i", $sql)) {
-            throw new Exception("Base de dados - Não é uma instrução em select", 1);
+            //throw new Exception("Base de dados - Não é uma instrução em select", 1);
+            return "deu ruim no exception";
         }
 
         //Liga
