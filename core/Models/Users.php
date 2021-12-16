@@ -44,6 +44,27 @@ class Users
         }
     }
 
+/*public function listagem($nome, $cidade){
+    $parametros = [
+        ':nome' => $nome,
+        ':cidade' => $cidade
+    ];
+
+    $bd = new Conexao();
+    $resultado = $bd->select("SELECT * FROM cliente WHERE nome = :nome AND cidade = :cidade", $parametros);
+
+    if (count($resultado) != 1) {
+        echo "Não está cadastrado listagem";
+        return false;
+        
+    } else {
+        echo "sla listagem";
+        return true;
+
+    }
+
+}*/
+
     public function verificar_lista($email, $senha)
     {
 
@@ -62,7 +83,7 @@ class Users
             
         } else {
             return true;
-            
+
         }
     }
 }

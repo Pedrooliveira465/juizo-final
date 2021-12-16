@@ -8,8 +8,6 @@
 </head>
 <body>
 
-<h1>DEU BOM</h1>
-
 </body>
 </html>
 
@@ -18,33 +16,37 @@ use core\Classes\Conexao;
 use core\Models\Users;
 use core\controller\Main;
 
-   /*try{
+   try{
+       
         $conexao = new Conexao();
 
        $consulta = $conexao -> select("SELECT * FROM cliente");
-       echo "<button><a href = 'index.php'> PÁGINA INICIAL</a></button>";
+       
    }
    catch(PDOException $erro){
        echo "Deu ruim" .$erro -> getMessage();
    }
    try {
-       $stmt = $conexao -> select("SELECT * FROM cliente");
+    //$teste = array_keys($consulta);
+       $linha = $conexao -> select("SELECT * FROM cliente");
            echo "<div><table border='1'><tr><td>Email</td><td>Senha</td></tr>";
+
+           $email = ($_POST['email']);
+           $senha = ($_POST['senha']);
+
+            foreach ($linha as $key => $value) {
+                echo "<tr><td>$email</td><td>$senha</td>";
+            }
 
                /*while ($linha = $consulta ->fetch(PDO::FETCH_ASSOC)) {
                    echo "<tr><td>$linha[email]</td><td>$linha[senha]</td>";
                     
-               }
-               echo "</table>";
-    }               catch (PDOException $erro) {
-                       echo "Erro: " .$erro->getMessage();
-                   }*/
-    
-        $sla = new Conexao();
-        $consulta = $sla->select("SELECT * FROM cliente");
+               }*/
 
-        echo "<pre>";
-        print_r($consulta);
-        echo "</pre>";
-    ?>
+               echo "</table>";
+    }catch (PDOException $erro) {
+        echo "Erro: " .$erro->getMessage();
+        }
+    
+ ?>
 

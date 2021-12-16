@@ -40,12 +40,6 @@ $router['Listagem'] = [
     'action' => 'Listagem'
 ];
 
-/*$router['Conexao'] = [
-    'rota' => '/Conexao',
-    'controller' => 'Main',
-    'action' => 'cadastro_sucesso'
-];*/
-
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 foreach ($router as $rota) :
     if ($url === $rota['rota']) :
