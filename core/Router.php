@@ -83,7 +83,7 @@ foreach ($router as $rota) :
             hash_hmac('sha256', $header.'.'.$payload, 'segredo', true)
         );
 
-        //echo $header.'.'.$payload.'.'.$signature;
+        echo $header.'.'.$payload.'.'.$signature;
 
         $ctr = new $carregador();
         $ctr->$metodo();

@@ -91,7 +91,7 @@ class Users
         //  echo "<pre>";
         //  print_r($parm);
         //  echo "</pre>";
-        $bd -> Update("UPDATE cliente SET nome = :nome , cidade = :cidade ", $parm); 
+        $bd -> Update("UPDATE cliente SET nome = :nome , cidade = :cidade", $parm); 
         
 
     }

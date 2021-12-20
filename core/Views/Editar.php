@@ -21,10 +21,10 @@ use core\Classes\Conexao;
             <P>COLOQUE CERTO DESSA VEZ!!!</P>
             <input type="hidden" name="id" value="">
             Nome:
-            <input type="text" name="nome" id= "nome" placeholder="Pedro" value="">
+            <input type="text" name="nome" id= "nome" placeholder="" value="">
             <br>
             Cidade:
-            <input type="text" name="cidade" id="cidade" placeholder="Fortaleza" value="">
+            <input type="text" name="cidade" id="cidade" placeholder="" value="">
             <br>
             <input type="submit" value="Editar" onclick ="" id ="editar">
         </div>
