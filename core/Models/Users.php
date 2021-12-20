@@ -12,6 +12,7 @@ session_start();
 class Users
 {
 
+    //Cadastra o cliente
     public function registrar_cliente()
     {
         try {
@@ -32,12 +33,14 @@ class Users
             )
             ", $params);
 
+            //Segundo parametro
             $paramss = [
                 ':email' => strtolower(trim($_POST['text_email'])),
                 ':senha' => password_hash(trim($_POST['text_senha_1']), PASSWORD_DEFAULT),
                 ':telefone' => (trim($_POST['text_telefone']))
             ];
 
+            //Segundo insert
             $bd->insert("INSERT INTO dados_sensiveis VALUES (0,
             :email,
             :senha,
@@ -74,17 +77,37 @@ class Users
         }
     }
 
-    public function editar($nome, $cidade){
+    //Edita o cliente
+    public function editar_cliente(){
+
+        $bd = new Conexao();
+
         $parm = [
-            ':nome' => $nome,
-            ':cidade' => $cidade
+    
+            ':nome' => (trim($_POST['nome'])),
+            ':cidade' => (trim($_POST['cidade']))
         ];
 
-        echo "<pre>";
-        print_r($parm);
-        echo "</pre>";
+        //  echo "<pre>";
+        //  print_r($parm);
+        //  echo "</pre>";
+        $bd -> Update("UPDATE cliente SET nome = :nome , cidade = :cidade ", $parm); 
+        
+
+    }
+
+    //Deleta o cliente 
+    public function delete_cliente(){
         $bd = new Conexao();
-        $bd->Update("UPDATE cliente SET nome = :nome , cidade = :cidade, $parm");  
+
+        $parametros = [
+
+            ':nome' => (trim($_POST['nome'])),
+            ':cidade' => (trim($_POST['cidade']))
+
+        ];
+
+        $bd -> delete("DELETE FROM cliente WHERE nome = :nome AND cidade = :cidade", $parametros);
 
     }
 

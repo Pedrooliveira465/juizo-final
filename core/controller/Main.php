@@ -54,18 +54,31 @@ class Main{
 
     }
 
-    public function Editar2(){
-        $nome = ($_POST['nome']);
-        $cidade = ($_POST['cidade']);
+    public function editar_cliente(){
+        Carregador::layout([
+            'Editar_Sucesso',
+        ]);
 
         $edit = new Users();
-        $edit -> editar($nome, $cidade);
+        $edit -> editar_cliente();
     }
 
     public function delete(){
         Carregador::layout([
             'Delete',
         ]);
+
+    }
+
+    public function deletar(){
+
+        Carregador::layout([
+            'Deletar',
+        ]);
+
+        $delete = new Users();
+        $delete -> delete_cliente();
+
     }
 
     public function detalhes(){

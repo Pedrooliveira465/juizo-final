@@ -46,22 +46,29 @@ $router['Editar'] = [
     'action' => 'Editar'
 ];
 
+$router['Editar_Sucesso'] = [
+    'rota'=> '/Editar_Sucesso',
+    'controller' => 'Main',
+    'action' => 'editar_cliente'
+];
+
 $router['Delete'] = [
     'rota' => '/Delete',
     'controller' => 'Main',
-    'action' => 'Delete'
+    'action' => 'delete'
 ];
+
+$router['Deletar'] = [
+    'rota' => '/Deletar',
+    'controller' => 'Main',
+    "action" => 'deletar'
+];
+
 
 $router['Detalhes'] = [
     'rota' => '/Detalhes',
     'controller' => 'Main',
     'action' => 'Detalhes'
-];
-
-$router['Editar2'] = [
-    'rota'=> '/Editar2',
-    'controller' => 'Main',
-    'action' => 'Editar2'
 ];
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);

@@ -2,7 +2,7 @@
 
 use core\Classes\Conexao;
 
-$edit = new Conexao();
+//$edit = new Conexao();
 
 ?>
 
@@ -15,24 +15,24 @@ $edit = new Conexao();
 </head>
 <body>
 
-    <form action="/Editar2" method="POST" id="form">
-    <div class="formEditar">
+    <form action="/Editar_Sucesso" method="POST" id="form">
+    <div>
             <h2>EDITAR</h2>
-            <P>NÃO PERCA A OPORTUNIDADE DE GANHAR UM PS5 POR CONTA DE DADOS ERRADOS, COLOQUE CERTO DESSA VEZ!!!</P>
+            <P>COLOQUE CERTO DESSA VEZ!!!</P>
             <input type="hidden" name="id" value="">
             Nome:
-            <input type="text" name="nome" id= "nome" placeholder="Pedro Neto Marques" value="">
+            <input type="text" name="nome" id= "nome" placeholder="Pedro" value="">
             <br>
             Cidade:
-            <input type="text" name="cidade" id="numero" placeholder="4" value="">
+            <input type="text" name="cidade" id="cidade" placeholder="Fortaleza" value="">
             <br>
-            <input type="submit" value="Salvar" onclick ="" id ="salvar">
+            <input type="submit" value="Editar" onclick ="" id ="editar">
         </div>
     </form>
-    <script>
+    <!--<script>
         document.getElementById("salvar").onclick = function clicar(){
     alert("Editado com sucesso!")
 }
-    </script>
+    </script>-->
 </body>
 </html>
