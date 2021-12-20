@@ -64,12 +64,10 @@ class Users
         ];
         
         $bd = new Conexao();
-        $login = new Main();
         $resultado = $bd->select("SELECT * FROM dados_sensiveis WHERE email = :email AND senha = :senha", $paramss);
 
         if (count($resultado) != 1) {
             //echo "n deu certo";
-            //return $login -> erro_login();
             
         } else {
             return true;
