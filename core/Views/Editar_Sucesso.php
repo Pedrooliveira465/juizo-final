@@ -1,1 +1,1 @@
-<h1>Dados cadastrados com sucesso <br><a href="/Login">Volte aqui</a></h1>
+<h1>Dados editados com sucesso <br><a href="/Login">Volte aqui</a></h1>

@@ -1,1 +1,1 @@
-<h1>Deletado, aeee</h1>
+<h1>Dados deletados com sucesso <br><a href="/Login">Login</a></h1>
